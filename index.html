@@ -6,31 +6,30 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
   </head>
   <body>
-    <div>
+    <!--<div>
       <button class="button">New Tweets</button>
     </div>
 
     <div class="tweets">
       
-    </div>
-
+    </div>-->
     <script>
 
       $(document).ready(function(){
-        //var $body = $('body');
-        //$body.html('');
+        var $body = $('body');
+        $body.html('');
 
         var index = streams.home.length - 1;
 
-        /*while(index >= 0){
+        while(index >= 0){
           var tweet = streams.home[index];
           var $tweet = $('<div></div>');
           $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($('.tweets'));
+          $tweet.appendTo($($body));
           index -= 1;
-        }*/
+        }
 
-        $('.button').on('click', function() {
+        /*$('.button').on('click', function() {
           if(index == 0) {
             $(this).remove();
           }
@@ -39,7 +38,7 @@
           $tweet.prependTo($('.tweets'));
           $tweet.text('@' + tweet.user + ': ' + tweet.message);
           index--;
-        })
+        })*/
 
       });
 
