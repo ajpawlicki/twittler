@@ -30,6 +30,9 @@
         }*/
 
         $('.button').on('click', function() {
+          if(index == 0) {
+            $(this).remove();
+          }
           var tweet = streams.home[index];
           var $tweet = $('<div></div>');
           $tweet.prependTo($('.tweets'));
