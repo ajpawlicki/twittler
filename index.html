@@ -6,40 +6,36 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
   </head>
   <body>
-    <!--<div>
+    <div>
       <button class="button">New Tweets</button>
     </div>
 
     <div class="tweets">
       
-    </div>-->
+    </div>
     <script>
 
       $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
+        //var $body = $('body');
+        //$body.html('');
 
         var index = streams.home.length - 1;
 
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($($body));
-          index -= 1;
-        }
+        var lastIndex = 0;
 
-        /*$('.button').on('click', function() {
-          if(index == 0) {
-            $(this).remove();
+        $('.button').on('click', function() {
+          index = streams.home.length - 1;
+          while(index >= lastIndex){
+            var tweet = streams.home[index];
+            var $tweet = $('<div></div>');
+            $tweet.text('@' + tweet.user + ': ' + tweet.message);
+            $tweet.appendTo($('.tweets'));
+            index -= 1;
           }
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.prependTo($('.tweets'));
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          index--;
-        })*/
-
+          lastIndex = streams.home.length - 1;
+          console.log('lastIndex: ', lastIndex);
+          console.log('index: ', index);
+        })
       });
 
     </script>
