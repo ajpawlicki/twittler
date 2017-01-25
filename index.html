@@ -22,33 +22,33 @@
 
         var lastIndex = 0;
 
-        var timeline = home;
+        var currentStream = streams.home;
 
         $('.button').on('click', function() {
-          index = streams.home.length - 1;
+          index = currentStream.length - 1;
 
           var $block = $('<section></section>')
           
           while(index >= lastIndex){
-            var tweet = streams.home[index];
+            var tweet = currentStream[index];
             var $tweet = $('<div></div>');
             
-            var $username_btn = $('<button></button>');
-            $username_btn.text('@' + tweet.user);
-            $username_btn.addClass(tweet.user);
+            var $username_a = $('<a></a>');
+            $username_a.text('@' + tweet.user);
+            $username_a.addClass(tweet.user);
+            $username_a.attr('href', tweet.user + '.html')
             
             $tweet.text(': ' + tweet.message + ' ' + tweet.created_at);
-            $username_btn.prependTo($tweet);
+            $username_a.prependTo($tweet);
             $tweet.appendTo($block);
             $block.prependTo($('.tweets')); 
             index -= 1;
           }
           
-          lastIndex = streams.home.length;
+          lastIndex = currentStream.length;
           //console.log('index: ', index);
           //console.log('lastIndex: ', lastIndex);
         })
-
 
       });
 
