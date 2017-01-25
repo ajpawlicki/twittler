@@ -11,12 +11,11 @@
       <button class="new-tweets-btn">New Tweets</button>
     </div>
     <div class="tweets">
-      
     </div>
     <script>
 
       $(document).ready(function(){
-        var $body = $('body');
+        //var $body = $('body');
         //$body.html('');
 
         var index;
@@ -49,22 +48,23 @@
             $timestamp.appendTo($tweet);
             
             $tweet.appendTo($block);
-            $block.prependTo($('.tweets')); 
             
             index -= 1;
           }
-          
+
+          $block.prependTo($('.tweets'));
+
           lastIndex = currentStream.length;
           //console.log('index: ', index);
           //console.log('lastIndex: ', lastIndex);
-        })
+        });
 
         // Click handler to filter out other usernames and change currentStream
-        // Doesn't work
-        $('.mracus').on('click', function(){
-          $('.douglascalhoun').closest('div').remove();
-          $('.shawndrost').remove();
-          $('.sharksforcheap').remove();
+        $('.mracus').on('click', function() {
+          console.log('click worked!');
+          //$('.douglascalhoun').closest('div').remove();
+          //$('.shawndrost').remove();
+          //$('.sharksforcheap').remove();
           currentStream = streams.users.mracus;
           console.log(currentStream);
         })
