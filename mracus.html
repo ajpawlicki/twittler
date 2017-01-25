@@ -39,17 +39,26 @@
             $username.addClass(tweet.user);
             $username.attr('href', tweet.user + '.html')
             
-            $tweet.text(': ' + tweet.message + ' ' + tweet.created_at);
+            var $timestamp = $('<small></small>');
+            $timestamp.text(' ' + tweet.created_at);
+            $timestamp.addClass('timestamp');
+
+            $tweet.text(': ' + tweet.message);
+            
             $username.prependTo($tweet);
+            $timestamp.appendTo($tweet);
+            
             $tweet.appendTo($block);
-            $block.prependTo($('.tweets')); 
+            
             index -= 1;
           }
-          
+
+          $block.prependTo($('.tweets'));
+
           lastIndex = currentStream.length;
           //console.log('index: ', index);
           //console.log('lastIndex: ', lastIndex);
-        })
+        });
 
       });
 

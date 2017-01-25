@@ -2,6 +2,10 @@ a {
 	text-decoration: none;
 }
 
+a:visited {
+	color: #888;
+}
+
 body {
   background: #293f50;
   color: #888;
@@ -16,4 +20,9 @@ body {
 .home-btn {
 	color: #648880;
 	font: inherit;
+}
+
+.mracus, .sharksforcheap, .shawndrost, .douglascalhoun {
+	color: #a9b2b9;
+	font-size: 18px;
 }
