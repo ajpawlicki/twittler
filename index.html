@@ -36,7 +36,7 @@
             var $username_a = $('<a></a>');
             $username_a.text('@' + tweet.user);
             $username_a.addClass(tweet.user);
-            //$username_a.attr('href', tweet.user + '.html')
+            $username_a.attr('href', tweet.user + '.html')
             
             $tweet.text(': ' + tweet.message + ' ' + tweet.created_at);
             $username_a.prependTo($tweet);
@@ -50,12 +50,14 @@
           //console.log('lastIndex: ', lastIndex);
         })
 
-        $('.mracus').on('click', function(){
-          $('.douglascalhou').remove();
+        // Click handler to filter out other usernames and change currentStream
+        // Didn't work
+        /*$('.mracus').on('click', function(){
+          $('.douglascalhoun').remove();
           $('.shawndrost').remove();
           $('.sharksforcheap').remove();
           currentStream = streams.users.mracus;
-        })
+        })*/
 
       });
 
