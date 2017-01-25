@@ -34,13 +34,13 @@
             var tweet = currentStream[index];
             var $tweet = $('<div></div>');
             
-            var $username_a = $('<a></a>');
-            $username_a.text('@' + tweet.user);
-            $username_a.addClass(tweet.user);
-            $username_a.attr('href', tweet.user + '.html')
+            var $username = $('<a></a>');
+            $username.text('@' + tweet.user);
+            $username.addClass(tweet.user);
+            $username.attr('href', tweet.user + '.html')
             
             $tweet.text(': ' + tweet.message + ' ' + tweet.created_at);
-            $username_a.prependTo($tweet);
+            $username.prependTo($tweet);
             $tweet.appendTo($block);
             $block.prependTo($('.tweets')); 
             index -= 1;
@@ -53,12 +53,13 @@
 
         // Click handler to filter out other usernames and change currentStream
         // Doesn't work
-        /*$('.mracus').on('click', function(){
+        $('.mracus').on('click', function(){
           $('.douglascalhoun').remove();
           $('.shawndrost').remove();
           $('.sharksforcheap').remove();
           currentStream = streams.users.mracus;
-        })*/
+          console.log(currentStream);
+        })
 
       });
 
