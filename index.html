@@ -22,6 +22,8 @@
 
         var lastIndex = 0;
 
+        var timeline = home;
+
         $('.button').on('click', function() {
           index = streams.home.length - 1;
 
@@ -30,9 +32,13 @@
           while(index >= lastIndex){
             var tweet = streams.home[index];
             var $tweet = $('<div></div>');
+            
             var $username_btn = $('<button></button>');
             $username_btn.text('@' + tweet.user);
+            $username_btn.addClass(tweet.user);
+            
             $tweet.text(': ' + tweet.message + ' ' + tweet.created_at);
+            $username_btn.prependTo($tweet);
             $tweet.appendTo($block);
             $block.prependTo($('.tweets')); 
             index -= 1;
@@ -42,6 +48,8 @@
           //console.log('index: ', index);
           //console.log('lastIndex: ', lastIndex);
         })
+
+
       });
 
     </script>
