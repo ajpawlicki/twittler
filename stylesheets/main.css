@@ -1,5 +1,19 @@
+a {
+	text-decoration: none;
+}
+
+body {
+  background: #293f50;
+  color: #888;
+  font: 400 16px/22px "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.timestamp {
+	font-weight: 200;
+}
+
 .new-tweets-btn,
 .home-btn {
-}
-.timestamp {
+	color: #648880;
+	font: inherit;
 }
