@@ -9,30 +9,35 @@
     <div>
       <button class="button">New Tweets</button>
     </div>
-
     <div class="tweets">
       
     </div>
     <script>
 
       $(document).ready(function(){
-        //var $body = $('body');
+        var $body = $('body');
         //$body.html('');
 
-        var index = streams.home.length - 1;
+        var index;
 
         var lastIndex = 0;
 
         $('.button').on('click', function() {
           index = streams.home.length - 1;
+          
+          var $block = $('<section></section>')
+          
           while(index >= lastIndex){
             var tweet = streams.home[index];
             var $tweet = $('<div></div>');
-            $tweet.text('@' + tweet.user + ': ' + tweet.message);
-            $tweet.appendTo($('.tweets'));
+            $tweet.text('@' + tweet.user + ': ' + tweet.message + ' ' + tweet.created_at);
+            $tweet.appendTo($block);
+            $block.prependTo($('.tweets')); 
             index -= 1;
           }
+          
           lastIndex = streams.home.length - 1;
+          
           console.log('lastIndex: ', lastIndex);
           console.log('index: ', index);
         })
