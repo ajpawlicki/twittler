@@ -7,7 +7,8 @@
   </head>
   <body>
     <div>
-      <button class="button">New Tweets</button>
+      <button class="home-btn"><a href="index.html">Home</a></button>
+      <button class="new-tweets-btn">New Tweets</button>
     </div>
     <div class="tweets">
       
@@ -24,7 +25,7 @@
 
         var currentStream = streams.home;
 
-        $('.button').on('click', function() {
+        $('.new-tweets-btn').on('click', function() {
           index = currentStream.length - 1;
 
           var $block = $('<section></section>')
@@ -51,7 +52,7 @@
         })
 
         // Click handler to filter out other usernames and change currentStream
-        // Didn't work
+        // Doesn't work
         /*$('.mracus').on('click', function(){
           $('.douglascalhoun').remove();
           $('.shawndrost').remove();
