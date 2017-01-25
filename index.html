@@ -30,7 +30,9 @@
           while(index >= lastIndex){
             var tweet = streams.home[index];
             var $tweet = $('<div></div>');
-            $tweet.text('@' + tweet.user + ': ' + tweet.message + ' ' + tweet.created_at);
+            var $username_btn = $('<button></button>');
+            $username_btn.text('@' + tweet.user);
+            $tweet.text(': ' + tweet.message + ' ' + tweet.created_at);
             $tweet.appendTo($block);
             $block.prependTo($('.tweets')); 
             index -= 1;
