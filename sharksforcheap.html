@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery.js"></script>
+    <script src="data_generator.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+  </head>
+  <body>
+    <div>
+      <button class="home-btn"><a href="index.html">Home</a></button>
+      <button class="new-tweets-btn">New Tweets</button>
+    </div>
+    <div class="tweets">
+      
+    </div>
+    <script>
+
+      $(document).ready(function(){
+        var $body = $('body');
+        //$body.html('');
+
+        var index;
+
+        var lastIndex = 0;
+
+        var currentStream = streams.users.sharksforcheap;
+
+        $('.new-tweets-btn').on('click', function() {
+          index = currentStream.length - 1;
+
+          var $block = $('<section></section>')
+          
+          while(index >= lastIndex){
+            var tweet = currentStream[index];
+            var $tweet = $('<div></div>');
+            
+            var $username_a = $('<a></a>');
+            $username_a.text('@' + tweet.user);
+            $username_a.addClass(tweet.user);
+            $username_a.attr('href', tweet.user + '.html')
+            
+            $tweet.text(': ' + tweet.message + ' ' + tweet.created_at);
+            $username_a.prependTo($tweet);
+            $tweet.appendTo($block);
+            $block.prependTo($('.tweets')); 
+            index -= 1;
+          }
+          
+          lastIndex = currentStream.length;
+          //console.log('index: ', index);
+          //console.log('lastIndex: ', lastIndex);
+        })
+
+      });
+
+    </script>
+  </body>
+</html>
