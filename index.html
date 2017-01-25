@@ -33,10 +33,10 @@
             var tweet = currentStream[index];
             var $tweet = $('<div></div>');
             
-            var $username = $('<b></b>');
+            var $username = $('<a></a>');
             $username.text('@' + tweet.user);
             $username.addClass(tweet.user);
-            //$username.attr('href', tweet.user + '.html')
+            $username.attr('href', tweet.user + '.html')
             
             var $timestamp = $('<small></small>');
             $timestamp.text(' ' + tweet.created_at);
@@ -60,14 +60,14 @@
         });
 
         // Click handler to filter out other usernames and change currentStream
-        $('.mracus').on('click', function() {
-          console.log('click worked!');
+        //$('.mracus').on('click', function() {
+          //console.log('click worked!');
           //$('.douglascalhoun').closest('div').hide();
           //$('.shawndrost').hide();
           //$('.sharksforcheap').hide();
-          currentStream = streams.users.mracus;
-          console.log(currentStream);
-        })
+          //currentStream = streams.users.mracus;
+          //console.log(currentStream);
+        //})
 
       });
 
