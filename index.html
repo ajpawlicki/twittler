@@ -24,7 +24,7 @@
 
         $('.button').on('click', function() {
           index = streams.home.length - 1;
-          
+
           var $block = $('<section></section>')
           
           while(index >= lastIndex){
@@ -36,10 +36,9 @@
             index -= 1;
           }
           
-          lastIndex = streams.home.length - 1;
-          
-          console.log('lastIndex: ', lastIndex);
-          console.log('index: ', index);
+          lastIndex = streams.home.length;
+          //console.log('index: ', index);
+          //console.log('lastIndex: ', lastIndex);
         })
       });
 
