@@ -36,7 +36,7 @@
             var $username_a = $('<a></a>');
             $username_a.text('@' + tweet.user);
             $username_a.addClass(tweet.user);
-            $username_a.attr('href', tweet.user + '.html')
+            //$username_a.attr('href', tweet.user + '.html')
             
             $tweet.text(': ' + tweet.message + ' ' + tweet.created_at);
             $username_a.prependTo($tweet);
@@ -48,6 +48,13 @@
           lastIndex = currentStream.length;
           //console.log('index: ', index);
           //console.log('lastIndex: ', lastIndex);
+        })
+
+        $('.mracus').on('click', function(){
+          $('.douglascalhou').remove();
+          $('.shawndrost').remove();
+          $('.sharksforcheap').remove();
+          currentStream = streams.users.mracus;
         })
 
       });
