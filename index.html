@@ -55,20 +55,17 @@
           $block.prependTo($('.tweets'));
 
           lastIndex = currentStream.length;
-          //console.log('index: ', index);
-          //console.log('lastIndex: ', lastIndex);
+          console.log('index: ', index);
+          console.log('lastIndex: ', lastIndex);
         });
 
-      });
-      
-      // Click handler to filter out other usernames and change currentStream
-      $(window).on('load', function() {
-        $('.mracus').on('click', function() {
-          console.log('click worked!');
-          //$('.douglascalhoun').closest('div').hide();
-          //$('.shawndrost').hide();
-          //$('.sharksforcheap').hide();
-          //currentStream = streams.users.mracus;
+        // Click handler to filter out other usernames and change currentStream
+        $('.tweets').on('click', '.mracus', function() {
+          //console.log('click worked!');
+          $('.douglascalhoun').closest('div').hide();
+          $('.shawndrost').closest('div').hide();
+          $('.sharksforcheap').closest('div').hide();
+          currentStream = streams.users.mracus;
           //console.log(currentStream);
         });
       });
