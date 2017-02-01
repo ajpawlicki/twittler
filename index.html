@@ -55,8 +55,8 @@
           $block.prependTo($('.tweets'));
 
           lastIndex = currentStream.length;
-          console.log('index: ', index);
-          console.log('lastIndex: ', lastIndex);
+          //console.log('index: ', index);
+          //console.log('lastIndex: ', lastIndex);
         });
 
         // Click handler to filter out other usernames and change currentStream
@@ -68,6 +68,30 @@
           currentStream = streams.users.mracus;
           //console.log(currentStream);
         });
+
+        // douglascalhoun click handler
+        $('.tweets').on('click', '.douglascalhoun', function() {
+          $('.mracus').closest('div').hide();
+          $('.shawndrost').closest('div').hide();
+          $('.sharksforcheap').closest('div').hide();
+          currentStream = streams.users.douglascalhoun;
+        });
+
+        // shawndrost click handler
+        $('.tweets').on('click', '.shawndrost', function() {
+          $('.douglascalhoun').closest('div').hide();
+          $('.mracus').closest('div').hide();
+          $('.sharksforcheap').closest('div').hide();
+          currentStream = streams.users.shawndrost;
+        });
+
+        // sharksforcheap click handler
+        $('.tweets').on('click', '.sharksforcheap', function() {
+          $('.douglascalhoun').closest('div').hide();
+          $('.shawndrost').closest('div').hide();
+          $('.mracus').closest('div').hide();
+          currentStream = streams.users.sharksforcheap;
+        });        
       });
 
     </script>
