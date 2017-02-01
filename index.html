@@ -7,7 +7,7 @@
   </head>
   <body>
     <div>
-      <button class="home-btn"><a href="index.html">Home</a></button>
+      <button class="home-btn">Home</button>
       <button class="new-tweets-btn">New Tweets</button>
     </div>
     <div class="tweets">
@@ -92,6 +92,15 @@
           $('.mracus').closest('div').hide();
           currentStream = streams.users.sharksforcheap;
         });        
+
+        $('.home-btn').on('click', function() {
+          $('.douglascalhoun').closest('div').show();
+          $('.shawndrost').closest('div').show();
+          $('.mracus').closest('div').show();
+          $('.sharksforcheap').closest('div').show();
+          currentStream = streams.home;
+        });
+
       });
 
     </script>
